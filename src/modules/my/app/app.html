@@ -1,0 +1,47 @@
+<template>
+    <lightning-layout
+        vertical-align="stretch"
+        multiple-rows="false"
+        class="x-large"
+    >
+        <div class="slds-m-around_x-large">
+            <div class="slds-m-top_medium slds-m-bottom_x-large">
+                <p class="slds-text-body_regular">
+                    This small extension shows the time zone as defined on the
+                    User record in Salesforce, as well as the time zone as
+                    reported by the device.
+                </p>
+                <div class="slds-m-top_medium slds-m-bottom_medium">
+                    <div class="slds-text-heading--label">Server Time Zone</div>
+                    <p class="slds-truncate" title={serverTimeZone}>
+                        {serverTimeZone}
+                    </p>
+                </div>
+                <div class="slds-m-top_medium slds-m-bottom_medium">
+                    <div class="slds-text-heading--label">Device Time Zone</div>
+                    <p class="slds-truncate" title={deviceTimeZone}>
+                        {deviceTimeZone}
+                    </p>
+                </div>
+                <p class="slds-text-body_regular">
+                    Tap Update to set the Server Time Zone to the Device Time
+                    Zone.
+                </p>
+            </div>
+            <div class="slds-align_absolute-center">
+                <lightning-button
+                    label="Update"
+                    disabled={updateButtonState}
+                    variant="brand"
+                    class="slds-m-around-large"
+                    onclick={update}
+                ></lightning-button>
+                <lightning-button
+                    label="Dismiss"
+                    class="slds-m-around_large"
+                    onclick={dismiss}
+                ></lightning-button>
+            </div>
+        </div>
+    </lightning-layout>
+</template>
